@@ -1,0 +1,12 @@
+<component name="libraryTable">
+  <library name="apache-commons-net">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/lib/apache-commons-net.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/commons-codec-1.9.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$PROJECT_DIR$/lib/apache-commons-net.jar!/" />
+    </SOURCES>
+  </library>
+</component>
