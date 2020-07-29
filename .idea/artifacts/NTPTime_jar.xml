@@ -1,0 +1,10 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="NTPTime:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/NTPTime_jar</output-path>
+    <root id="archive" name="NTPTime.jar">
+      <element id="module-output" name="NTPTime" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/lib/apache-commons-net.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/lib/commons-codec-1.9.jar" path-in-jar="/" />
+    </root>
+  </artifact>
+</component>

@@ -12,28 +12,37 @@ http://commons.apache.org/proper/commons-net/apidocs/org/apache/commons/net/ntp/
 http://commons.apache.org/proper/commons-net/apidocs/org/apache/commons/net/ntp/NtpV3Packet.html
 
 
+javac NetworkTime.java -cp "commons-codec-1.14.jar;commons-net-3.6.jar"
+
+Run
+java -cp "commons-codec-1.14.jar;commons-net-3.6.jar;." NetworkTime
+
  */
 
 
-//import lrapi.*;
+
 
 package com.rsarpal.NetworkTime;
 import org.apache.commons.net.ntp.NTPUDPClient;
 //import org.apache.commons.net.ntp.NtpV3Packet;
 import org.apache.commons.net.ntp.TimeInfo;
 
+
 import java.io.IOException;
 import java.net.InetAddress;
 import java.net.UnknownHostException;
-//import java.util.Date;
+import java.time.LocalDateTime;
+import java.time.Instant;
+import java.time.ZoneId;
+
 
 public class NetworkTime {
 	
 	private long timeInMillis;
 	private String TIME_SERVER;
 	
-	public NetworkTime( String timeServer ) throws Exception{
-		//TIME_SERVER = "ns16.europe.nokia.com";   //nokia time server
+	public NetworkTime( String timeServer ) {
+		//TIME_SERVER = "ns.europe.someserve.com";   //some time server
 		TIME_SERVER = timeServer;
 
 	}
@@ -57,8 +66,17 @@ public class NetworkTime {
 		return timeInMillis;
 
 	}
-	
-	
+
+	public LocalDateTime getTimeInLocalDateTime(){
+		Instant instant = Instant.ofEpochMilli(getTimeInMillis());
+		LocalDateTime date = instant.atZone(ZoneId.systemDefault()).toLocalDateTime();
+
+		return date;
+	}
+
+
+
+
 }
 
 		
